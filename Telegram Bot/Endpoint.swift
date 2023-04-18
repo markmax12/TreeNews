@@ -45,7 +45,7 @@ enum TelegramEndpoint: Endpoint {
                 URLQueryItem(name: "parse_mode", value: "MarkdownV2")
             ]
             
-            let title = news.title?.bolded().newLine() ?? ""
+            let title = news.title?.bolded() ?? ""
             let body = news.body ?? ""
             let text = title + body
             parameters.append(URLQueryItem(name: "text", value: text))
