@@ -9,22 +9,20 @@ import Foundation
 
 final class TelegramNWMngr {
     
-    private static let botkey = APIKey.key
-    private static let channelID = "@treenewsc"
     private let session = URLSession(configuration: .default)
     
-    public func onRecieve(news: News) async throws {
-        let title = news.title ?? ""
-        let body = news.body ?? ""
-        try await self.sendRequest(message: title)
+    public func onRecieve(endpoint: Endpoint) async throws {
+        print(endpoint.parameters)
+        guard let url = buildURL(endpoint: endpoint) else {
+            fatalError("cannot make URL")
+        }
+        
+        try await self.sendRequest(with: url)
     }
     
-    public func sendRequest(message: String) async throws {
-        let urlString =  "https://api.telegram.org/bot\(TelegramNWMngr.botkey)/sendMessage?chat_id=\(TelegramNWMngr.channelID)&text=\(message)"
+    public func sendRequest(with url: URL) async throws {
         
-        guard let urlString = URL(string: urlString) else { return }
-        
-        let (_, response) = try await session.data(from: urlString)
+        let (_, response) = try await session.data(from: url)
         
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             return
@@ -32,4 +30,14 @@ final class TelegramNWMngr {
         
         print("posted succesfully")
     }
+    
+    private func buildURL(endpoint: Endpoint) -> URL? {
+        var components = URLComponents()
+        components.scheme = endpoint.scheme
+        components.host = endpoint.baseURL
+        components.path = endpoint.path
+        components.queryItems = endpoint.parameters
+        return components.url
+    }
+    
 }
