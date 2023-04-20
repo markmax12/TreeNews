@@ -15,4 +15,20 @@ extension String {
     public func newLine() -> String {
         return self + "\n"
     }
+    
+    //TODO: Provide a better implementation
+    public func escapeMarkdown() -> String {
+        let arr: [Character] = ["*", "_", "[", "]", "(", ")", "~", "`", ">", "#", "+", "-", "=", "|", "{", "}", ".", "!"]
+        let charsToEscape = Set(arr)
+        
+        var res = ""
+        for i in self {
+            if charsToEscape.contains(i) {
+                res += "\\\(i)"
+                continue
+            }
+            res += String(i)
+        }
+        return res
+    }
 }

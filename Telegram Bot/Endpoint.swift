@@ -33,7 +33,7 @@ enum TelegramEndpoint: Endpoint {
     var path: String {
         switch self {
         case .sendMessage:
-            return "bot\(APIKey.key)/sendMessage"
+            return "/bot\(APIKey.key)/sendMessage"
         }
     }
     
@@ -45,8 +45,8 @@ enum TelegramEndpoint: Endpoint {
                 URLQueryItem(name: "parse_mode", value: "MarkdownV2")
             ]
             
-            let title = news.title?.bolded() ?? ""
-            let body = news.body ?? ""
+            let title = news.title?.escapeMarkdown().bolded().newLine() ?? ""
+            let body = news.body?.escapeMarkdown() ?? ""
             let text = title + body
             parameters.append(URLQueryItem(name: "text", value: text))
             return parameters

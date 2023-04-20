@@ -53,13 +53,11 @@ final class WSManager {
                 let data = Data(string.utf8)
                 let newsData = try JSONDecoder()
                     .decode(News.self, from: data)
-                let tgEndpoint = TelegramEndpoint.sendMessage(news: newsData)
-                try await telegramManager.onRecieve(endpoint: tgEndpoint)
+                    try await telegramManager.onRecieve(news: newsData)
             case .data(let data):
                 let newsData = try JSONDecoder()
                     .decode(News.self, from: data)
-                let tgEndpoint = TelegramEndpoint.sendMessage(news: newsData)
-                try await telegramManager.onRecieve(endpoint: tgEndpoint)
+                try await telegramManager.onRecieve(news: newsData)
             @unknown default:
                 fatalError()
             }
