@@ -53,10 +53,16 @@ final class WSManager {
                 let data = Data(string.utf8)
                 let newsData = try JSONDecoder()
                     .decode(News.self, from: data)
-                    try await telegramManager.onRecieve(news: newsData)
+                let recievedTime = Date()
+                let formattedTime = DateFormatterSingleton.shared.formatter.string(from: recievedTime)
+                print("Recieved at: \(formattedTime)")
+                try await telegramManager.onRecieve(news: newsData)
             case .data(let data):
                 let newsData = try JSONDecoder()
                     .decode(News.self, from: data)
+                let recievedTime = Date()
+                let formattedTime = DateFormatterSingleton.shared.formatter.string(from: recievedTime)
+                print("Recieved at: \(formattedTime)")
                 try await telegramManager.onRecieve(news: newsData)
             @unknown default:
                 fatalError()

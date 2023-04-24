@@ -16,9 +16,10 @@ protocol Endpoint {
 }
 
 enum TelegramEndpoint: Endpoint {
-    
     case sendMessage(news: News)
-    
+}
+
+extension TelegramEndpoint {
     var method: String {
         return "POST"
     }
@@ -45,14 +46,25 @@ enum TelegramEndpoint: Endpoint {
                 URLQueryItem(name: "parse_mode", value: "MarkdownV2")
             ]
             
-            let title = news.title?.escapeMarkdown().bolded().newLine() ?? ""
-            let body = news.body?.escapeMarkdown() ?? ""
-            let text = title + body
+            let text = self.formatText(news)
             parameters.append(URLQueryItem(name: "text", value: text))
             return parameters
         }
     }
     
+    private func formatText(_ news: News) -> String {
+        //TODO: USE LINK AS A TITLE
+        let title = news.title?.escapeMarkdown().bolded().newLine() ?? ""
+        let body = news.body?.escapeMarkdown() ?? ""
+        var text = title + body
+        //TODO: REWORK if better JSON model is provided
+        if let url = news.url {
+            text = text.newLine() + "[link](\(url))"
+        } else if let link = news.link {
+            text = text.newLine() + "[link](\(link))"
+        }
+        
+        return text
+    }
 }
-
 

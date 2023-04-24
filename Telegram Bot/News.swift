@@ -7,52 +7,33 @@
 
 import Foundation
 
-// MARK: - News
-struct News: Codable {
+struct News: Decodable {
     let title, body: String?
-    let icon, image: String?
-    let requireInteraction: Bool?
-    let type: String?
     let link: String?
-    let info: Info?
     let coin: String?
-    let actions: [Action]?
-    let suggestions: [Suggestion]?
-    let time: Int?
-    let id: String?
-
-    enum CodingKeys: String, CodingKey {
-        case title, body, icon, image, requireInteraction, type, link, info, coin, actions, suggestions, time
-        case id
+    let time: Int
+    
+    private enum CodingKeys: CodingKey {
+        case title, body
+        case link, url
+        case coin
+        case time
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.title = try container.decodeIfPresent(String.self, forKey: .title)
+        self.body = try container.decodeIfPresent(String.self, forKey: .body)
+        
+        if let link = try container.decodeIfPresent(String.self, forKey: .link) {
+            self.link = link
+        } else if let url = try container.decodeIfPresent(String.self, forKey: .url) {
+            self.link = url
+        } else {
+            self.link = nil
+        }
+        
+        self.coin = try container.decodeIfPresent(String.self, forKey: .coin)
+        self.time = try container.decode(Int.self, forKey: .time)
     }
 }
-
-// MARK: - Action
-struct Action: Codable {
-    let action, title: String
-    let icon: String
-}
-
-// MARK: - Info
-struct Info: Codable {
-    let twitterID: String?
-    let isReply, isRetweet, isQuote: Bool
-
-    enum CodingKeys: String, CodingKey {
-        case twitterID
-        case isReply, isRetweet, isQuote
-    }
-}
-
-// MARK: - Suggestion
-struct Suggestion: Codable {
-    let found: [String]
-    let coin: String
-    let symbols: [Symbol]
-}
-
-// MARK: - Symbol
-struct Symbol: Codable {
-    let exchange, symbol: String
-}
-

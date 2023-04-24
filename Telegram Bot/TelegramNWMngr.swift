@@ -23,11 +23,13 @@ final class TelegramNWMngr {
         print("try to send request")
         let (_, response) = try await session.data(from: url)
         print(response)
+        //TODO: Error response handling
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             return
         }
-        
-        print("posted succesfully")
+        let postTime = Date()
+        let formatted = DateFormatterSingleton.shared.formatter.string(from: postTime)
+        print("posted succesfully at: \(formatted)")
     }
     
     private func buildURL(endpoint: Endpoint) -> URL? {
