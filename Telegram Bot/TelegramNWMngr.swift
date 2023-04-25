@@ -20,11 +20,15 @@ final class TelegramNWMngr {
     }
     
     public func sendRequest(with url: URL) async throws {
-        print("try to send request")
         let (_, response) = try await session.data(from: url)
-        print(response)
+        print(response.url)
         //TODO: Error response handling
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            if let url = response.url {
+                print("failed to post, URL: ", url)
+            } else {
+                print("failed to post, no URL")
+            }
             return
         }
         let postTime = Date()

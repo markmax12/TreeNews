@@ -12,6 +12,7 @@ struct News: Decodable {
     let link: String?
     let coin: String?
     let time: Int
+    let isQuote: Bool
     
     private enum CodingKeys: CodingKey {
         case title, body
@@ -19,6 +20,7 @@ struct News: Decodable {
         case coin
         case time
         case suggestions
+        case info
     }
         
     struct Suggestions: Decodable {
@@ -27,6 +29,10 @@ struct News: Decodable {
     
     private enum SuggestionsKeys: CodingKey {
         case coin
+    }
+    
+    private enum InfoKeys: CodingKey {
+        case isQuote
     }
     
     init(from decoder: Decoder) throws {
@@ -54,6 +60,13 @@ struct News: Decodable {
             }
         } else {
             self.coin = nil
+        }
+        
+        if container.contains(.info) {
+            let infoContainer = try container.nestedContainer(keyedBy: InfoKeys.self, forKey: .info)
+            self.isQuote = try infoContainer.decode(Bool.self, forKey: .isQuote)
+        } else {
+            self.isQuote = false
         }
         
         self.time = try container.decode(Int.self, forKey: .time)

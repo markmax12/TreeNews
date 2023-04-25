@@ -53,15 +53,33 @@ extension TelegramEndpoint {
     }
     
     private func formatText(_ news: News) -> String {
-        //TODO: USE LINK AS A TITLE
-        let title = news.title?.escapeMarkdown().bolded().newLine() ?? ""
-        let body = news.body?.escapeMarkdown() ?? ""
-        var text = title + body
-        //TODO: REWORK if better JSON model is provided
-        if let url = news.url {
-            text = text.newLine() + "[link](\(url))"
-        } else if let link = news.link {
-            text = text.newLine() + "[link](\(link))"
+        var text = ""
+        let title = news.title?.escapeMarkdown() ?? ""
+        let url = news.link ?? ""
+        //TODO: CHECK IF THE @ ARE ESCAPED PROPERLY
+        //TODO: PROPOSE A QUOTE TWEET SOLUTION
+        if var body = news.body {
+            if news.isQuote {
+                if #available(macOS 13.0, *) {
+                    let arr = body.split(separator: "Quote")
+                    body = String(arr[0]).escapeMarkdown()
+                    let arr2 = arr[1].split(separator: "\n", maxSplits: 1)
+                    let link = String(arr2[0])
+                    let quoteBody = String(arr2[1]).escapeMarkdown()
+                    body += link; body += "`\(quoteBody)`"
+                } else {
+                    fatalError("for now, only macOS 13 only")
+                }
+            } else {
+                body = body.escapeMarkdown()
+            }
+            text = "[\(title)](\(url))".bolded().newLine() + body.escapeMarkdown()
+        } else {
+            text = title.bolded().newLine().newLine() + "[Read full story](\(url))"
+        }
+        
+        if let coin = news.coin {
+            text = "$" + coin.bolded().newLine().newLine() + text
         }
         
         return text
