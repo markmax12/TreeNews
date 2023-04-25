@@ -14,7 +14,6 @@
 		4E0D2C6229E88B9800D8C510 /* TelegramNWMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */; };
 		4E7A943D29EDF2B5005EE662 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A943C29EDF2B5005EE662 /* Utils.swift */; };
 		4E7A943F29EDF6A3005EE662 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A943E29EDF6A3005EE662 /* Endpoint.swift */; };
-		4E7A944229F1E6AD005EE662 /* DateFormatterSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A944129F1E6AD005EE662 /* DateFormatterSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +37,6 @@
 		4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramNWMngr.swift; sourceTree = "<group>"; };
 		4E7A943C29EDF2B5005EE662 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4E7A943E29EDF6A3005EE662 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		4E7A944129F1E6AD005EE662 /* DateFormatterSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +76,6 @@
 				4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */,
 				4E7A943C29EDF2B5005EE662 /* Utils.swift */,
 				4E7A943E29EDF6A3005EE662 /* Endpoint.swift */,
-				4E7A944129F1E6AD005EE662 /* DateFormatterSingleton.swift */,
 			);
 			path = "Telegram Bot";
 			sourceTree = "<group>";
@@ -145,7 +142,6 @@
 				4E0D2C6029E8816000D8C510 /* Keys.swift in Sources */,
 				4E0D2C5329E8550300D8C510 /* main.swift in Sources */,
 				4E0D2C6229E88B9800D8C510 /* TelegramNWMngr.swift in Sources */,
-				4E7A944229F1E6AD005EE662 /* DateFormatterSingleton.swift in Sources */,
 				4E0D2C5C29E8576100D8C510 /* WSManager.swift in Sources */,
 				4E7A943D29EDF2B5005EE662 /* Utils.swift in Sources */,
 				4E7A943F29EDF6A3005EE662 /* Endpoint.swift in Sources */,

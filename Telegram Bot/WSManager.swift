@@ -42,6 +42,15 @@ final class WSManager {
         websocketTask.cancel()
     }
     
+    public func sendPing() async throws {
+        do {
+            let response = try await websocketTask.sendPing()
+            print(response)
+        } catch {
+            print(error)
+        }
+    }
+    
     //TODO: PING FUNCTION
     
     public func recieveMessage() async throws {

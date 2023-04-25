@@ -32,8 +32,8 @@ final class TelegramNWMngr {
             return
         }
         let postTime = Date()
-        let formatted = DateFormatterSingleton.shared.formatter.string(from: postTime)
-        print("posted succesfully at: \(formatted)")
+        let formattedTime = DateFormatterSingleton.shared.formatter.string(from: postTime)
+        print("posted succesfully at: \(formattedTime)")
     }
     
     private func buildURL(endpoint: Endpoint) -> URL? {
