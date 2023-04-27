@@ -49,6 +49,7 @@
 		4EA4EC4D29F9DF4E00899E73 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		4EA4EC4F29F9E15F00899E73 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		4EA4EC5129FA011400899E73 /* URLSessionWebsocketTask+async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionWebsocketTask+async.swift"; sourceTree = "<group>"; };
+		4EA4ECAC29FABCB700899E73 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +66,8 @@
 		4E0D2C4629E8550300D8C510 = {
 			isa = PBXGroup;
 			children = (
-				4E0D2C5129E8550300D8C510 /* Telegram Bot */,
+				4E0D2C5129E8550300D8C510 /* TreeNews */,
+				4EA4ECAC29FABCB700899E73 /* README.md */,
 				4E0D2C5029E8550300D8C510 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +80,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4E0D2C5129E8550300D8C510 /* Telegram Bot */ = {
+		4E0D2C5129E8550300D8C510 /* TreeNews */ = {
 			isa = PBXGroup;
 			children = (
 				4EA4EC4129F9912100899E73 /* Network */,
@@ -86,7 +88,7 @@
 				4EA4EC3929F98D8500899E73 /* Utils */,
 				4E0D2C5229E8550300D8C510 /* main.swift */,
 			);
-			path = "Telegram Bot";
+			path = TreeNews;
 			sourceTree = "<group>";
 		};
 		4EA4EC3929F98D8500899E73 /* Utils */ = {
@@ -165,7 +167,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4E0D2C4A29E8550300D8C510 /* Build configuration list for PBXProject "Telegram Bot" */;
+			buildConfigurationList = 4E0D2C4A29E8550300D8C510 /* Build configuration list for PBXProject "TreeNews" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -349,7 +351,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E0D2C4A29E8550300D8C510 /* Build configuration list for PBXProject "Telegram Bot" */ = {
+		4E0D2C4A29E8550300D8C510 /* Build configuration list for PBXProject "TreeNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E0D2C5429E8550300D8C510 /* Debug */,

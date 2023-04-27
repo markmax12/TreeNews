@@ -1,13 +1,10 @@
 # TreeNews
 
-Simple CLI app that fetches news from TreeNews websocket 
+Simple CLI app that fetches data from TreeNews websocket and sends news to Telegram channels/chats using Telegram bot's API.
 
 ## Overview
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+Made for educational purposes only, it is however can be used as helper for news traders.
 
-## Topics
+Uses Swift's Regex, async/await model, websockets and custom codable logic.
 
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
-
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
