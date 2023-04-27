@@ -11,8 +11,8 @@ final class TelegramNWMngr {
     
     private let session = URLSession(configuration: .default)
     
-    public func onRecieve(news: News) async throws {
-        let tgEndpoint = TelegramEndpoint.sendMessage(news: news)
+    public func onRecieve(message: String) async throws {
+        let tgEndpoint = TelegramEndpoint.sendMessage(message: message)
         guard let url = buildURL(endpoint: tgEndpoint) else {
             fatalError("cannot make URL")
         }
@@ -21,14 +21,10 @@ final class TelegramNWMngr {
     
     public func sendRequest(with url: URL) async throws {
         let (_, response) = try await session.data(from: url)
-        print(response.url)
+        print(url)
         //TODO: Error response handling
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            if let url = response.url {
-                print("failed to post, URL: ", url)
-            } else {
-                print("failed to post, no URL")
-            }
+            print("failed to post, URL: ", url, response.description)
             return
         }
         let postTime = Date()

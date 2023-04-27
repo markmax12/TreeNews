@@ -8,6 +8,7 @@
 import Foundation
 
 final class WSManager {
+    //TODO: CHECK PING FUNCTION, TIME TO SLEEP ALSO
     private let telegramManager = TelegramNWMngr()
     private let url = URL(string: "wss://news.treeofalpha.com/ws")
     private let urlsession = URLSession(configuration: .default)
@@ -49,10 +50,12 @@ final class WSManager {
         } catch {
             print(error)
         }
+        
+        try await Task.sleep(nanoseconds: 600_000_000_000)
+        try await sendPing()
     }
     
-    //TODO: PING FUNCTION
-    
+    //TODO: MOVE RECIEVING LOGIC IN EXTENSION, REWORK PROCESSING
     public func recieveMessage() async throws {
         do {
             let data = try await websocketTask.receive()
@@ -60,19 +63,9 @@ final class WSManager {
             case .string(let string):
                 print(string)
                 let data = Data(string.utf8)
-                let newsData = try JSONDecoder()
-                    .decode(News.self, from: data)
-                let recievedTime = Date()
-                let formattedTime = DateFormatterSingleton.shared.formatter.string(from: recievedTime)
-                print("Recieved at: \(formattedTime)")
-                try await telegramManager.onRecieve(news: newsData)
+                try sendRequest(with: data)
             case .data(let data):
-                let newsData = try JSONDecoder()
-                    .decode(News.self, from: data)
-                let recievedTime = Date()
-                let formattedTime = DateFormatterSingleton.shared.formatter.string(from: recievedTime)
-                print("Recieved at: \(formattedTime)")
-                try await telegramManager.onRecieve(news: newsData)
+                try sendRequest(with: data)
             @unknown default:
                 fatalError()
             }
@@ -80,6 +73,20 @@ final class WSManager {
             try await recieveMessage()
         } catch {
             print(error)
+        }
+    }
+}
+
+extension WSManager {
+    private func sendRequest(with data: Data) throws {
+        let message = try JSONDecoder()
+            .decode(AnyNews.self, from: data)
+            .prepareMessage()
+        let recievedTime = Date()
+        let formattedTime = DateFormatterSingleton.shared.formatter.string(from: recievedTime)
+        print("Recieved at: \(formattedTime)")
+        Task {
+            try await telegramManager.onRecieve(message: message)
         }
     }
 }

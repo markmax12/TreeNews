@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		4E0D2C5329E8550300D8C510 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C5229E8550300D8C510 /* main.swift */; };
-		4E0D2C5A29E8573D00D8C510 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C5929E8573D00D8C510 /* News.swift */; };
 		4E0D2C5C29E8576100D8C510 /* WSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C5B29E8576100D8C510 /* WSManager.swift */; };
 		4E0D2C6029E8816000D8C510 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C5F29E8816000D8C510 /* Keys.swift */; };
 		4E0D2C6229E88B9800D8C510 /* TelegramNWMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */; };
-		4E7A943D29EDF2B5005EE662 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A943C29EDF2B5005EE662 /* Utils.swift */; };
 		4E7A943F29EDF6A3005EE662 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A943E29EDF6A3005EE662 /* Endpoint.swift */; };
+		4EA4EC3D29F98E3000899E73 /* DateFormatterSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC3C29F98E3000899E73 /* DateFormatterSingleton.swift */; };
+		4EA4EC4629F9A02D00899E73 /* String+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4529F9A02D00899E73 /* String+Markup.swift */; };
+		4EA4EC4829F9A04000899E73 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4729F9A04000899E73 /* String+Regex.swift */; };
+		4EA4EC4A29F9C74F00899E73 /* AnyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4929F9C74F00899E73 /* AnyNews.swift */; };
+		4EA4EC4C29F9DF4700899E73 /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4B29F9DF4700899E73 /* BlogPost.swift */; };
+		4EA4EC4E29F9DF4E00899E73 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4D29F9DF4E00899E73 /* Tweet.swift */; };
+		4EA4EC5029F9E15F00899E73 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4F29F9E15F00899E73 /* News.swift */; };
+		4EA4EC5229FA011400899E73 /* URLSessionWebsocketTask+async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC5129FA011400899E73 /* URLSessionWebsocketTask+async.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,12 +37,18 @@
 /* Begin PBXFileReference section */
 		4E0D2C4F29E8550300D8C510 /* Telegram Bot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Telegram Bot"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E0D2C5229E8550300D8C510 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		4E0D2C5929E8573D00D8C510 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		4E0D2C5B29E8576100D8C510 /* WSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSManager.swift; sourceTree = "<group>"; };
 		4E0D2C5F29E8816000D8C510 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramNWMngr.swift; sourceTree = "<group>"; };
-		4E7A943C29EDF2B5005EE662 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4E7A943E29EDF6A3005EE662 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		4EA4EC3C29F98E3000899E73 /* DateFormatterSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterSingleton.swift; sourceTree = "<group>"; };
+		4EA4EC4529F9A02D00899E73 /* String+Markup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Markup.swift"; sourceTree = "<group>"; };
+		4EA4EC4729F9A04000899E73 /* String+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
+		4EA4EC4929F9C74F00899E73 /* AnyNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNews.swift; sourceTree = "<group>"; };
+		4EA4EC4B29F9DF4700899E73 /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
+		4EA4EC4D29F9DF4E00899E73 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		4EA4EC4F29F9E15F00899E73 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		4EA4EC5129FA011400899E73 /* URLSessionWebsocketTask+async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionWebsocketTask+async.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,15 +81,53 @@
 		4E0D2C5129E8550300D8C510 /* Telegram Bot */ = {
 			isa = PBXGroup;
 			children = (
+				4EA4EC4129F9912100899E73 /* Network */,
+				4EA4EC4029F98FDA00899E73 /* Model */,
+				4EA4EC3929F98D8500899E73 /* Utils */,
 				4E0D2C5229E8550300D8C510 /* main.swift */,
-				4E0D2C5929E8573D00D8C510 /* News.swift */,
-				4E0D2C5B29E8576100D8C510 /* WSManager.swift */,
-				4E0D2C5F29E8816000D8C510 /* Keys.swift */,
-				4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */,
-				4E7A943C29EDF2B5005EE662 /* Utils.swift */,
-				4E7A943E29EDF6A3005EE662 /* Endpoint.swift */,
 			);
 			path = "Telegram Bot";
+			sourceTree = "<group>";
+		};
+		4EA4EC3929F98D8500899E73 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4EA4EC4429F9A01600899E73 /* String+Extensions */,
+				4E0D2C5F29E8816000D8C510 /* Keys.swift */,
+				4EA4EC3C29F98E3000899E73 /* DateFormatterSingleton.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4EA4EC4029F98FDA00899E73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4EA4EC4929F9C74F00899E73 /* AnyNews.swift */,
+				4EA4EC4F29F9E15F00899E73 /* News.swift */,
+				4EA4EC4B29F9DF4700899E73 /* BlogPost.swift */,
+				4EA4EC4D29F9DF4E00899E73 /* Tweet.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4EA4EC4129F9912100899E73 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A943E29EDF6A3005EE662 /* Endpoint.swift */,
+				4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */,
+				4E0D2C5B29E8576100D8C510 /* WSManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4EA4EC4429F9A01600899E73 /* String+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4EA4EC4529F9A02D00899E73 /* String+Markup.swift */,
+				4EA4EC4729F9A04000899E73 /* String+Regex.swift */,
+				4EA4EC5129FA011400899E73 /* URLSessionWebsocketTask+async.swift */,
+			);
+			path = "String+Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,13 +188,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E0D2C5A29E8573D00D8C510 /* News.swift in Sources */,
+				4EA4EC4629F9A02D00899E73 /* String+Markup.swift in Sources */,
+				4EA4EC5229FA011400899E73 /* URLSessionWebsocketTask+async.swift in Sources */,
+				4EA4EC4829F9A04000899E73 /* String+Regex.swift in Sources */,
 				4E0D2C6029E8816000D8C510 /* Keys.swift in Sources */,
+				4EA4EC4C29F9DF4700899E73 /* BlogPost.swift in Sources */,
+				4EA4EC5029F9E15F00899E73 /* News.swift in Sources */,
+				4EA4EC4E29F9DF4E00899E73 /* Tweet.swift in Sources */,
 				4E0D2C5329E8550300D8C510 /* main.swift in Sources */,
 				4E0D2C6229E88B9800D8C510 /* TelegramNWMngr.swift in Sources */,
 				4E0D2C5C29E8576100D8C510 /* WSManager.swift in Sources */,
-				4E7A943D29EDF2B5005EE662 /* Utils.swift in Sources */,
 				4E7A943F29EDF6A3005EE662 /* Endpoint.swift in Sources */,
+				4EA4EC4A29F9C74F00899E73 /* AnyNews.swift in Sources */,
+				4EA4EC3D29F98E3000899E73 /* DateFormatterSingleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

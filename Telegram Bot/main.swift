@@ -14,6 +14,10 @@ func main() {
         try await websocketManager.subscribe()
         try await websocketManager.recieveMessage()
     }
+    
+    Task {
+        try await websocketManager.sendPing()
+    }
 }
 
 main()
