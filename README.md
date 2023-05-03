@@ -12,7 +12,7 @@ Uses Swift's Regex, async/await model, websockets and custom codable logic.
 
 Swift 5.7.1 or higher.
 
-macOS 13.0 or higher.
+macOS 10.15 or higher.
 
 ## Getting Bot Token and Chat ID
 
@@ -42,7 +42,7 @@ $ swift run treenews --bot <botKey> --chat <chatID>
 Shorthand arguments are supported, so you can build and run like this:
 
 ```
-$ swift run treenews --b <botKey> --c <chatID>
+$ swift run treenews -b <botKey> -c <chatID>
 ```
 
 If connection is successful, tokens and IDs are valid, you will see that you are subscribed to the websocket:

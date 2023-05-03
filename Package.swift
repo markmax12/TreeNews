@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Telegram Bot",
+    name: "TreeNews",
     platforms: [
         .macOS(.v10_15)
     ],
