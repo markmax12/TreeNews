@@ -74,7 +74,7 @@ extension TelegramEndpoint {
         var text = ""
         let title = tweet.title.escapeMarkdown()
         let link = tweet.link
-        let time = tweet.time
+        let _ = tweet.time
         
         let body = processTweetBody(with: tweet.body, type: tweet.type)
         text = "[⚡️ \(title)](\(link)):".bolded().newLine() + body
@@ -107,7 +107,7 @@ extension TelegramEndpoint {
         var text = ""
         let title = post.title.escapeMarkdown()
         let link = post.link
-        let time = post.time
+        let _ = post.time
         
         text = "⚡️ " + title.bolded().newLine().newLine() + "[👉 Read full story](\(link))"
         
