@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol News {
+public protocol News {
     var title: String { get }
     var link: String { get }
     var time: Int { get }

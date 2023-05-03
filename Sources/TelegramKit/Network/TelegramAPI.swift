@@ -7,14 +7,20 @@
 
 import Foundation
 
-final class TelegramNWMngr {
+final class TelegramAPI: API {
     
-    private let session = URLSession(configuration: .default)
+    private let session: URLSession
+    private let credentials: Credentials
     
-    public func onRecieve(message: String) async throws {
-        let tgEndpoint = TelegramEndpoint.sendMessage(message: message)
-        guard let url = buildURL(endpoint: tgEndpoint) else {
-            fatalError("cannot make URL")
+    public init(with credentials: Credentials, urlSession: URLSession = URLSession(configuration: .default)) {
+        self.credentials = credentials
+        self.session = urlSession
+    }
+    
+    public func onRecieve(news: AnyNews) async throws {
+        let tgEndpoint = TelegramEndpoint.sendMessage(news: news, credentials: credentials)
+        guard let url = buildURL(endpoint: tgEndpoint) else { throw
+            RunTimeError("Can't build URL")
         }
         try await self.sendRequest(with: url)
     }

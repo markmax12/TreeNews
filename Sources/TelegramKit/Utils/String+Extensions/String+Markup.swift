@@ -7,17 +7,17 @@
 
 import Foundation
 
-extension String {
-    public func bolded() -> String {
+public extension String {
+    func bolded() -> String {
         return "*" + self + "*"
     }
     
-    public func newLine() -> String {
+    func newLine() -> String {
         return self + "\n"
     }
     
     //TODO: Provide a better implementation
-    public func escapeMarkdown() -> String {
+    func escapeMarkdown() -> String {
         let arr: [Character] = ["*", "_", "[", "]", "(", ")", "~", "`", ">", "#", "+", "-", "=", "|", "{", "}", ".", "!", "@"]
         let charsToEscape = Set(arr)
         

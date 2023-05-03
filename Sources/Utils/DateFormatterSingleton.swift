@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DateFormatterSingleton {
+public class DateFormatterSingleton {
     
     public static let shared = DateFormatterSingleton()
     

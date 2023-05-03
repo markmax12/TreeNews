@@ -7,11 +7,16 @@
 
 import Foundation
 
-final class WSManager {
+public final class WebsocketManager<T> where T: API {
     //TODO: CHECK PING FUNCTION, TIME TO SLEEP ALSO
-    private let telegramManager = TelegramNWMngr()
+    private let api: T
     private let url = URL(string: "wss://news.treeofalpha.com/ws")
-    private let urlsession = URLSession(configuration: .default)
+    private let urlsession: URLSession
+    
+    public init(with api: T, urlsession: URLSession = URLSession(configuration: .default)) {
+        self.api = api
+        self.urlsession = urlsession
+    }
     
     private lazy var websocketTask: URLSessionWebSocketTask = {
         let task = urlsession.webSocketTask(with: url!)
@@ -27,7 +32,7 @@ final class WSManager {
             try await websocketTask.send(msg)
             print("subscribed")
         } catch {
-            print(error)
+            throw RunTimeError("Can not subscribe, error: \(error)")
         }
     }
     
@@ -37,7 +42,7 @@ final class WSManager {
         do {
             try await websocketTask.send(msg)
         } catch {
-            print(error)
+            throw RunTimeError("Can not unsubscribe, error: \(error)")
         }
         
         websocketTask.cancel()
@@ -48,7 +53,7 @@ final class WSManager {
             let response = try await websocketTask.sendPing()
             print(response)
         } catch {
-            print(error)
+            throw RunTimeError("Can not send ping, error: \(error)")
         }
         
         try await Task.sleep(nanoseconds: 600_000_000_000)
@@ -64,29 +69,30 @@ final class WSManager {
                 print(string)
                 let data = Data(string.utf8)
                 try sendRequest(with: data)
+                
             case .data(let data):
                 try sendRequest(with: data)
+                
             @unknown default:
                 fatalError()
             }
             try await Task.sleep(nanoseconds: 1_000_000_000)
             try await recieveMessage()
         } catch {
-            print(error)
+            throw RunTimeError("Can not recieve message, error: \(error)")
         }
     }
 }
 
-extension WSManager {
-    private func sendRequest(with data: Data) throws {
-        let message = try JSONDecoder()
+private extension WebsocketManager {
+    func sendRequest(with data: Data) throws {
+        let news = try JSONDecoder()
             .decode(AnyNews.self, from: data)
-            .prepareMessage()
         let recievedTime = Date()
         let formattedTime = DateFormatterSingleton.shared.formatter.string(from: recievedTime)
         print("Recieved at: \(formattedTime)")
         Task {
-            try await telegramManager.onRecieve(message: message)
+            try await api.onRecieve(news: news)
         }
     }
 }

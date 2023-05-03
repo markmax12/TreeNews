@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E0D2C5329E8550300D8C510 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C5229E8550300D8C510 /* main.swift */; };
-		4E0D2C5C29E8576100D8C510 /* WSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C5B29E8576100D8C510 /* WSManager.swift */; };
+		4E0D2C5329E8550300D8C510 /* TreeNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C5229E8550300D8C510 /* TreeNews.swift */; };
 		4E0D2C6029E8816000D8C510 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C5F29E8816000D8C510 /* Keys.swift */; };
-		4E0D2C6229E88B9800D8C510 /* TelegramNWMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */; };
+		4E0D2C6229E88B9800D8C510 /* TelegramAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0D2C6129E88B9800D8C510 /* TelegramAPI.swift */; };
+		4E4423E92A00829200E93002 /* URLSessionWebsocketTask+async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423E02A00829200E93002 /* URLSessionWebsocketTask+async.swift */; };
+		4E4423EA2A00829200E93002 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423E12A00829200E93002 /* API.swift */; };
+		4E4423EB2A00829200E93002 /* WebsocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423E22A00829200E93002 /* WebsocketManager.swift */; };
+		4E4423EC2A00829200E93002 /* DateFormatterSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423E32A00829200E93002 /* DateFormatterSingleton.swift */; };
+		4E4423ED2A00829200E93002 /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423E52A00829200E93002 /* BlogPost.swift */; };
+		4E4423EE2A00829200E93002 /* AnyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423E62A00829200E93002 /* AnyNews.swift */; };
+		4E4423EF2A00829200E93002 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423E72A00829200E93002 /* Tweet.swift */; };
+		4E4423F02A00829200E93002 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423E82A00829200E93002 /* News.swift */; };
+		4E4423F32A00848100E93002 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 4E4423F22A00848100E93002 /* ArgumentParser */; };
+		4E4423F72A01A40A00E93002 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423F62A01A40A00E93002 /* Credentials.swift */; };
+		4E4423F92A01A53900E93002 /* RunTimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4423F82A01A53900E93002 /* RunTimeError.swift */; };
 		4E7A943F29EDF6A3005EE662 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A943E29EDF6A3005EE662 /* Endpoint.swift */; };
-		4EA4EC3D29F98E3000899E73 /* DateFormatterSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC3C29F98E3000899E73 /* DateFormatterSingleton.swift */; };
 		4EA4EC4629F9A02D00899E73 /* String+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4529F9A02D00899E73 /* String+Markup.swift */; };
 		4EA4EC4829F9A04000899E73 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4729F9A04000899E73 /* String+Regex.swift */; };
-		4EA4EC4A29F9C74F00899E73 /* AnyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4929F9C74F00899E73 /* AnyNews.swift */; };
-		4EA4EC4C29F9DF4700899E73 /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4B29F9DF4700899E73 /* BlogPost.swift */; };
-		4EA4EC4E29F9DF4E00899E73 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4D29F9DF4E00899E73 /* Tweet.swift */; };
-		4EA4EC5029F9E15F00899E73 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC4F29F9E15F00899E73 /* News.swift */; };
-		4EA4EC5229FA011400899E73 /* URLSessionWebsocketTask+async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EC5129FA011400899E73 /* URLSessionWebsocketTask+async.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,19 +40,23 @@
 
 /* Begin PBXFileReference section */
 		4E0D2C4F29E8550300D8C510 /* Telegram Bot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Telegram Bot"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E0D2C5229E8550300D8C510 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		4E0D2C5B29E8576100D8C510 /* WSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSManager.swift; sourceTree = "<group>"; };
+		4E0D2C5229E8550300D8C510 /* TreeNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNews.swift; sourceTree = "<group>"; };
 		4E0D2C5F29E8816000D8C510 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramNWMngr.swift; sourceTree = "<group>"; };
+		4E0D2C6129E88B9800D8C510 /* TelegramAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramAPI.swift; sourceTree = "<group>"; };
+		4E4423D22A00694300E93002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E4423E02A00829200E93002 /* URLSessionWebsocketTask+async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionWebsocketTask+async.swift"; sourceTree = "<group>"; };
+		4E4423E12A00829200E93002 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		4E4423E22A00829200E93002 /* WebsocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsocketManager.swift; sourceTree = "<group>"; };
+		4E4423E32A00829200E93002 /* DateFormatterSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterSingleton.swift; sourceTree = "<group>"; };
+		4E4423E52A00829200E93002 /* BlogPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
+		4E4423E62A00829200E93002 /* AnyNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyNews.swift; sourceTree = "<group>"; };
+		4E4423E72A00829200E93002 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		4E4423E82A00829200E93002 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		4E4423F62A01A40A00E93002 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		4E4423F82A01A53900E93002 /* RunTimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeError.swift; sourceTree = "<group>"; };
 		4E7A943E29EDF6A3005EE662 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		4EA4EC3C29F98E3000899E73 /* DateFormatterSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterSingleton.swift; sourceTree = "<group>"; };
 		4EA4EC4529F9A02D00899E73 /* String+Markup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Markup.swift"; sourceTree = "<group>"; };
 		4EA4EC4729F9A04000899E73 /* String+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
-		4EA4EC4929F9C74F00899E73 /* AnyNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyNews.swift; sourceTree = "<group>"; };
-		4EA4EC4B29F9DF4700899E73 /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
-		4EA4EC4D29F9DF4E00899E73 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
-		4EA4EC4F29F9E15F00899E73 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
-		4EA4EC5129FA011400899E73 /* URLSessionWebsocketTask+async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionWebsocketTask+async.swift"; sourceTree = "<group>"; };
 		4EA4ECAC29FABCB700899E73 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4423F32A00848100E93002 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,12 +92,60 @@
 		4E0D2C5129E8550300D8C510 /* TreeNews */ = {
 			isa = PBXGroup;
 			children = (
-				4EA4EC4129F9912100899E73 /* Network */,
-				4EA4EC4029F98FDA00899E73 /* Model */,
-				4EA4EC3929F98D8500899E73 /* Utils */,
-				4E0D2C5229E8550300D8C510 /* main.swift */,
+				4E4423F42A01A29C00E93002 /* Utils */,
+				4E0D2C5229E8550300D8C510 /* TreeNews.swift */,
+				4E4423DE2A00829200E93002 /* TreeNewsKit */,
+				4EA4ECB029FB88B300899E73 /* TelegramKit */,
+				4E4423D22A00694300E93002 /* Info.plist */,
 			);
 			path = TreeNews;
+			sourceTree = "<group>";
+		};
+		4E4423DE2A00829200E93002 /* TreeNewsKit */ = {
+			isa = PBXGroup;
+			children = (
+				4E4423DF2A00829200E93002 /* Websocket */,
+				4E4423E42A00829200E93002 /* Model */,
+			);
+			path = TreeNewsKit;
+			sourceTree = "<group>";
+		};
+		4E4423DF2A00829200E93002 /* Websocket */ = {
+			isa = PBXGroup;
+			children = (
+				4E4423E02A00829200E93002 /* URLSessionWebsocketTask+async.swift */,
+				4E4423E12A00829200E93002 /* API.swift */,
+				4E4423E22A00829200E93002 /* WebsocketManager.swift */,
+			);
+			path = Websocket;
+			sourceTree = "<group>";
+		};
+		4E4423E42A00829200E93002 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E4423E52A00829200E93002 /* BlogPost.swift */,
+				4E4423E62A00829200E93002 /* AnyNews.swift */,
+				4E4423E72A00829200E93002 /* Tweet.swift */,
+				4E4423E82A00829200E93002 /* News.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4E4423F42A01A29C00E93002 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4E4423E32A00829200E93002 /* DateFormatterSingleton.swift */,
+				4E4423F82A01A53900E93002 /* RunTimeError.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4E4423F52A01A3FF00E93002 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E4423F62A01A40A00E93002 /* Credentials.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4EA4EC3929F98D8500899E73 /* Utils */ = {
@@ -96,28 +153,15 @@
 			children = (
 				4EA4EC4429F9A01600899E73 /* String+Extensions */,
 				4E0D2C5F29E8816000D8C510 /* Keys.swift */,
-				4EA4EC3C29F98E3000899E73 /* DateFormatterSingleton.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		4EA4EC4029F98FDA00899E73 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4EA4EC4929F9C74F00899E73 /* AnyNews.swift */,
-				4EA4EC4F29F9E15F00899E73 /* News.swift */,
-				4EA4EC4B29F9DF4700899E73 /* BlogPost.swift */,
-				4EA4EC4D29F9DF4E00899E73 /* Tweet.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4EA4EC4129F9912100899E73 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				4E7A943E29EDF6A3005EE662 /* Endpoint.swift */,
-				4E0D2C6129E88B9800D8C510 /* TelegramNWMngr.swift */,
-				4E0D2C5B29E8576100D8C510 /* WSManager.swift */,
+				4E0D2C6129E88B9800D8C510 /* TelegramAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -127,9 +171,18 @@
 			children = (
 				4EA4EC4529F9A02D00899E73 /* String+Markup.swift */,
 				4EA4EC4729F9A04000899E73 /* String+Regex.swift */,
-				4EA4EC5129FA011400899E73 /* URLSessionWebsocketTask+async.swift */,
 			);
 			path = "String+Extensions";
+			sourceTree = "<group>";
+		};
+		4EA4ECB029FB88B300899E73 /* TelegramKit */ = {
+			isa = PBXGroup;
+			children = (
+				4E4423F52A01A3FF00E93002 /* Model */,
+				4EA4EC3929F98D8500899E73 /* Utils */,
+				4EA4EC4129F9912100899E73 /* Network */,
+			);
+			path = TelegramKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +201,9 @@
 			dependencies = (
 			);
 			name = "Telegram Bot";
+			packageProductDependencies = (
+				4E4423F22A00848100E93002 /* ArgumentParser */,
+			);
 			productName = "Telegram Bot";
 			productReference = 4E0D2C4F29E8550300D8C510 /* Telegram Bot */;
 			productType = "com.apple.product-type.tool";
@@ -176,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 4E0D2C4629E8550300D8C510;
+			packageReferences = (
+				4E4423F12A00848100E93002 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = 4E0D2C5029E8550300D8C510 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,18 +250,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA4EC4629F9A02D00899E73 /* String+Markup.swift in Sources */,
-				4EA4EC5229FA011400899E73 /* URLSessionWebsocketTask+async.swift in Sources */,
 				4EA4EC4829F9A04000899E73 /* String+Regex.swift in Sources */,
+				4E4423ED2A00829200E93002 /* BlogPost.swift in Sources */,
+				4E4423EC2A00829200E93002 /* DateFormatterSingleton.swift in Sources */,
+				4E4423F02A00829200E93002 /* News.swift in Sources */,
 				4E0D2C6029E8816000D8C510 /* Keys.swift in Sources */,
-				4EA4EC4C29F9DF4700899E73 /* BlogPost.swift in Sources */,
-				4EA4EC5029F9E15F00899E73 /* News.swift in Sources */,
-				4EA4EC4E29F9DF4E00899E73 /* Tweet.swift in Sources */,
-				4E0D2C5329E8550300D8C510 /* main.swift in Sources */,
-				4E0D2C6229E88B9800D8C510 /* TelegramNWMngr.swift in Sources */,
-				4E0D2C5C29E8576100D8C510 /* WSManager.swift in Sources */,
+				4E4423EF2A00829200E93002 /* Tweet.swift in Sources */,
+				4E0D2C5329E8550300D8C510 /* TreeNews.swift in Sources */,
+				4E0D2C6229E88B9800D8C510 /* TelegramAPI.swift in Sources */,
 				4E7A943F29EDF6A3005EE662 /* Endpoint.swift in Sources */,
-				4EA4EC4A29F9C74F00899E73 /* AnyNews.swift in Sources */,
-				4EA4EC3D29F98E3000899E73 /* DateFormatterSingleton.swift in Sources */,
+				4E4423EA2A00829200E93002 /* API.swift in Sources */,
+				4E4423F92A01A53900E93002 /* RunTimeError.swift in Sources */,
+				4E4423EE2A00829200E93002 /* AnyNews.swift in Sources */,
+				4E4423F72A01A40A00E93002 /* Credentials.swift in Sources */,
+				4E4423EB2A00829200E93002 /* WebsocketManager.swift in Sources */,
+				4E4423E92A00829200E93002 /* URLSessionWebsocketTask+async.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -315,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -328,9 +390,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7ZMTVQN9A8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/TreeNews/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markmax12.TreeNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -340,9 +407,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7ZMTVQN9A8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/TreeNews/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markmax12.TreeNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -358,7 +430,7 @@
 				4E0D2C5529E8550300D8C510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4E0D2C5629E8550300D8C510 /* Build configuration list for PBXNativeTarget "Telegram Bot" */ = {
 			isa = XCConfigurationList;
@@ -367,9 +439,28 @@
 				4E0D2C5829E8550300D8C510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4E4423F12A00848100E93002 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4E4423F22A00848100E93002 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E4423F12A00848100E93002 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4E0D2C4729E8550300D8C510 /* Project object */;
 }

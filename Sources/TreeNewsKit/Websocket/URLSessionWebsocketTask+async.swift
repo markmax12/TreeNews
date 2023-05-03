@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension URLSessionWebSocketTask {
-    public func sendPing() async throws -> String {
+public extension URLSessionWebSocketTask {
+    func sendPing() async throws -> String {
         func helper(_ completionHandler: @escaping (Result<String, Error>) ->()) {
             self.sendPing { error in
                 if let error {

@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     
-    enum TweetRegexPattern: String {
+    private enum TweetRegexPattern: String {
         case quteLink = " https://\\S+\nQuote "
         case trailingLink = " https://t.co\\S+$"
         case retweetHeader = "^.+retweeted\\s@\\w+:"
