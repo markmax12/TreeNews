@@ -11,6 +11,7 @@ Uses Swift's Regex, async/await model, websockets and custom codable logic.
 ## Requirements
 
 Swift 5.7.1 or higher.
+
 macOS 13.0 or higher.
 
 ## Getting Bot Token and Chat ID
