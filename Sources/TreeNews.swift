@@ -6,20 +6,22 @@
 //
 
 import Foundation
-import ArgumentParser
 
 @main
-struct TreeNews: AsyncParsableCommand {
+struct TreeNews {
     
-    @Option(name: [.short, .customLong("bot")], help: "Telegram Bot token in the format of 110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw. Ask @BotFather for it.")
-    var botKey: String
-    
-    @Option(name: [.short, .customLong("chat")], help: "The ID of a chat or a channel to be sent a message.")
-    var chatID: String
-    
-    func run() async throws {
+    static func main() async throws {
         
         do {
+            guard let botKey = ProcessInfo().environment["BOT_KEY"] else {
+                let error = RunTimeError("Error, no bot key provided")
+                TreeNews.exit(withError: error)
+            }
+            guard let chatID = ProcessInfo().environment["CHAT_ID"] else {
+                let error = RunTimeError("Error, no chat ID provided")
+                TreeNews.exit(withError: error)
+            }
+            
             let credentials = try Credentials(botKey: botKey, chatID: chatID)
             let telegramAPI = TelegramAPI(with: credentials)
             let websocketManager = WebsocketManager(with: telegramAPI)
@@ -34,7 +36,7 @@ struct TreeNews: AsyncParsableCommand {
             }
             
         } catch {
-            throw error
+            TreeNews.exit(withError: error)
         }
         
         while true {

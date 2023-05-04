@@ -33,16 +33,17 @@ $ cd TreeNews
 
 ### Usage
 
-Build and run the app using your bot token and chat ID as options:
+Before using the application, first set environment variables of bot key and chat ID:
+
+```
+$ export BOT_KEY=12345678
+$ export CHAT_ID=12345678  
+```
+
+Build and run the app:
 
 ```
 $ swift run treenews --bot <botKey> --chat <chatID>
-```
-
-Shorthand arguments are supported, so you can build and run like this:
-
-```
-$ swift run treenews -b <botKey> -c <chatID>
 ```
 
 If connection is successful, tokens and IDs are valid, you will see that you are subscribed to the websocket:
@@ -59,7 +60,7 @@ To clone the app, go to `Source Control` -> `Clone`, enter repository url:
 https://github.com/markmax12/TreeNews
 ```
 
-To include CLI arguments for build:
+To include environment variables for build:
 
 1. Select the scheme for application from the toolbar next to the current branch button. If you don't see the scheme, click on the scheme dropdown and choose `Edit Scheme...`.
 
@@ -67,8 +68,13 @@ To include CLI arguments for build:
 
 3. In the main window, select the `Arguments` tab.
 
-4. Under `Arguments Passed On Launch`, add command-line arguments.
+4. Under `Environment Variables`, add variables.
 
-5. Enter each argument in the fields. So you would need two fields for bot token and chat ID.
+5. Enter each argument in the fields. So you would need two fields for bot token and chat ID: `BOT_KEY` and `CHAT_ID`
 
 After passing the arguments, you can run the application.
+
+If connection is successful, tokens and IDs are valid, you will see that you are subscribed to the websocket:
+```
+subscribed
+```

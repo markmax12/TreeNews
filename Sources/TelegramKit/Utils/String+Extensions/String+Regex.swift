@@ -93,7 +93,7 @@ extension String {
     }
     
     private func splitRetweet(using range: Range<String.Index>) -> String {
-        var header = String(self[range])
+        let header = String(self[range])
         var body = String(self[range.upperBound ..< endIndex])
         body = body.removeTrailingLink(using: TweetRegexPattern.trailingLink.rawValue)
         body = body.escapeMarkdown()

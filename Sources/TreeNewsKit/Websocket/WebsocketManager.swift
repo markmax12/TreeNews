@@ -32,7 +32,7 @@ public final class WebsocketManager<T> where T: API {
             try await websocketTask.send(msg)
             print("subscribed")
         } catch {
-            throw RunTimeError("Can not subscribe, error: \(error)")
+            throw RunTimeError("Can't subscribe, error: \(error)")
         }
     }
     
@@ -42,7 +42,7 @@ public final class WebsocketManager<T> where T: API {
         do {
             try await websocketTask.send(msg)
         } catch {
-            throw RunTimeError("Can not unsubscribe, error: \(error)")
+            throw RunTimeError("Can't unsubscribe, error: \(error)")
         }
         
         websocketTask.cancel()
@@ -53,7 +53,7 @@ public final class WebsocketManager<T> where T: API {
             let response = try await websocketTask.sendPing()
             print(response)
         } catch {
-            throw RunTimeError("Can not send ping, error: \(error)")
+            throw RunTimeError("Can't send ping, error: \(error)")
         }
         
         try await Task.sleep(nanoseconds: 600_000_000_000)
@@ -79,7 +79,7 @@ public final class WebsocketManager<T> where T: API {
             try await Task.sleep(nanoseconds: 1_000_000_000)
             try await recieveMessage()
         } catch {
-            throw RunTimeError("Can not recieve message, error: \(error)")
+            throw RunTimeError("Can't recieve message, error: \(error)")
         }
     }
 }
