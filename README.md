@@ -43,7 +43,7 @@ $ export CHAT_ID=12345678
 Build and run the app:
 
 ```
-$ swift run treenews --bot <botKey> --chat <chatID>
+$ swift run treenews
 ```
 
 If connection is successful, tokens and IDs are valid, you will see that you are subscribed to the websocket:
